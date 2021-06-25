@@ -1,39 +1,73 @@
-var slideList = document.getElementsByClassName('main-slide'); // Slide parent dom
-var slideContents = document.querySelectorAll('.main-slide li'); // each slide dom
-//console.log(slideContents);
-var slideBtnNext = document.querySelector('#next'); // next button
-var slideBtnPrev = document.querySelector('#prev'); // prev button
-var slideLength = slideContents.length; // slide length
-//console.log(slideBtnNext,slideBtnPrev);
+const slideBox = document.querySelector('.banner_container');
+let slider = document.querySelector('.main-slide');
+const slide = document.querySelectorAll('.slide');
+const slidelength = slide.length;
+const prevBtn = document.querySelector('#banner_prev');
+const nextBtn = document.querySelector('#banner_next');
+const mainSlide = document.querySelector(".banner_container .main-slide");
 
-let slideContainer = document.querySelectorAll('.main-slide li');
-//console.log(slideContainer);
-var slideWidth = 1280;
+let slideImg = 0;
 
-let currentIndex = 0; // current slide index
-let position = 0;
 
-let DISABLED = 'disabled'; // index가 0일 때 prev에 disabled추가, index가 2일때 next에 disbaled 추가
+// function slideImgbox(n) {
+//   slideImg = n;
+// }
 
-// Prev Button Event
-function prev() {
-    if (currentIndex > 0) {
-        position += slideWidth;
-        slideContainer.style.transform = `translateX(${position}px)`;
-        currentIndex = currentIndex - 1;
-    }
 
-}
+prevBtn.addEventListener('click', function () {
+  //alert("hi");
+  slider = 0;
+  slideImg--;
+  slider = slideImg * -100 + '%';
+  // console.log(slider);
+  mainSlide.style.left = slider;
+});
 
-function next() {
-    if (currentIndex < 2) {
-        // slideBtnPrev.classList.remove(DISABLED);
-        position -= slideWidth;
-        slideContainer.style.transform = `translateX(${position}px)`;
-        currentIndex = currentIndex + 1;
-    }
+nextBtn.addEventListener('click', function () {
+  slider = 0;
+  slideImg++
+  slider = slideImg * -100 + '%';
+  // console.log(slider);
+  mainSlide.style.left = slider;
+});
 
-}
+console.log(slider);
 
-slideBtnPrev.addEventListener('click', prev);
-slideBtnNext.addEventListener('click', next);
+function removeBtn() {
+  if (slideImg == 0) {
+    prevBtn.classList.add('disabled');
+  } else {
+    prevBtn.classList.remove('disabled');
+  };
+
+  if (slideImg == slide - 1) {
+    nextBtn.classList.add('disabled');
+  } else {
+    nextBtn.classList.remove('disabled');
+  };
+};
+
+removeBtn();
+
+
+
+
+// nextBtn.addEventListener('click', function () {
+//   for (let i = 0; i < slidelength; i++){
+//     slide[i].style.left = i * 100 + '%';
+//   };
+// });
+
+// let position = 0;
+
+// prevBtn.addEventListener('click', function() {
+//   if (position < 0) return position = 0;
+//   position -= 1;
+//   slider.style.transform = `translateX(-${position}00%)`;
+// });
+
+// nextBtn.addEventListener('click', function() {
+//   if (position > 4) return position = 5;
+//   position += 1;
+//   slider.style.transform = `translateX(-${position}00%)`;
+// });
