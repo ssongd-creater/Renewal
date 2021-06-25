@@ -8,7 +8,6 @@ const mainSlide = document.querySelector(".banner_container .main-slide");
 
 let slideImg = 0;
 
-
 // function slideImgbox(n) {
 //   slideImg = n;
 // }
@@ -27,24 +26,30 @@ nextBtn.addEventListener('click', function () {
   slider = 0;
   slideImg++
   slider = slideImg * -100 + '%';
-  // console.log(slider);
+   //console.log(slider);
   mainSlide.style.left = slider;
 });
 
-console.log(slider);
+//console.log(slider);
 
 function removeBtn() {
-  if (slideImg == 0) {
+  //let removeBtn = document.querySelector(".banner_container .main-slide");
+  //removeBtn = 1;
+  if (slide.length = 0) {
+    console.log(removeBtn);
     prevBtn.classList.add('disabled');
-  } else {
+    //prevBtn.style.display = 'none';
+    //console.log(mainSlide);
+  }else{
     prevBtn.classList.remove('disabled');
-  };
+   // prevBtn.style.display = 'block';
+   };
 
-  if (slideImg == slide - 1) {
-    nextBtn.classList.add('disabled');
-  } else {
-    nextBtn.classList.remove('disabled');
-  };
+  // if (slide<=1) {
+  //   nextBtn.classList.add('disabled');
+  // } else {
+  //   nextBtn.classList.remove('disabled');
+  // };
 };
 
 removeBtn();
