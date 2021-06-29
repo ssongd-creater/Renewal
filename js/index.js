@@ -35,8 +35,9 @@ nextBtn.addEventListener('click', function () {
 function removeBtn() {
   //let removeBtn = document.querySelector(".banner_container .main-slide");
   //removeBtn = 1;
-  if (slide.length = 0) {
-    console.log(removeBtn);
+  let moveWidth = slider.offsetWidth;
+  console.log(movewidth);
+  if (moveWidth < 1) {
     prevBtn.classList.add('disabled');
     //prevBtn.style.display = 'none';
     //console.log(mainSlide);
