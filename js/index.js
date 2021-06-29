@@ -35,45 +35,21 @@ nextBtn.addEventListener('click', function () {
 function removeBtn() {
   //let removeBtn = document.querySelector(".banner_container .main-slide");
   //removeBtn = 1;
-  let moveWidth = slider.offsetWidth;
-  console.log(movewidth);
-  if (moveWidth < 1) {
+  const abc = abc.length;
+  
+  if (mainSlide.style.left == 0) {
     prevBtn.classList.add('disabled');
-    //prevBtn.style.display = 'none';
-    //console.log(mainSlide);
   }else{
     prevBtn.classList.remove('disabled');
-   // prevBtn.style.display = 'block';
-   };
-
-  // if (slide<=1) {
-  //   nextBtn.classList.add('disabled');
-  // } else {
-  //   nextBtn.classList.remove('disabled');
-  // };
+  };
 };
 
 removeBtn();
 
+//------------------
 
-
-
-// nextBtn.addEventListener('click', function () {
-//   for (let i = 0; i < slidelength; i++){
-//     slide[i].style.left = i * 100 + '%';
-//   };
-// });
-
-// let position = 0;
-
-// prevBtn.addEventListener('click', function() {
-//   if (position < 0) return position = 0;
-//   position -= 1;
-//   slider.style.transform = `translateX(-${position}00%)`;
-// });
-
-// nextBtn.addEventListener('click', function() {
-//   if (position > 4) return position = 5;
-//   position += 1;
-//   slider.style.transform = `translateX(-${position}00%)`;
-// });
+function showSlides() {
+  let i;
+  const slides = document.querySelectorAll(".mySlides");
+  console.log(slides);
+}
