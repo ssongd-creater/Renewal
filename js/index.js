@@ -34,13 +34,14 @@
   btn.forEach(function(elm){
     //console.log(elm);
     elm.addEventListener('click', function () {
-      console.log(this); //this=elm
-      if(this.classList.contains('prev')){
+      //console.log(this); //this=elm
+      if(this.classList.contains('banner_prev')){
         //console.log("true")
-        if(current == 0){
+        if (current == 0) {
           return false
         }else{
-          slider(current -1);
+          slider(current - 1);
+          console.log(current);
         };
       }else{
         if(current == slideBox.length-1){
@@ -102,7 +103,7 @@
 // //console.log(slider);
 
 // function removeBtn() {
-//   //let removeBtn = document.querySelector(".banner_container .main-slide");
+//   //let removeBtn = document.querySelector(".banner_container .main-slide");                  
 //   //removeBtn = 1;
 //   const abc = abc.length;
   
@@ -116,9 +117,34 @@
 // removeBtn();
 
 //------------------
+const myslides = document.querySelectorAll(".my_slides");
+console.log(myslides);
+const dot = document.querySelectorAll(".dot-item .dot");
 
+let slideIndex = 0;
 function showSlides() {
   let i;
-  const slides = document.querySelectorAll(".mySlides");
-  console.log(slides);
+  for (let i = 0; i < myslides.length; i++){
+ // console.log(myslides.length);
+  myslides[i].style.display = "none";
 }
+slideIndex++;
+if (slideIndex > myslides.length) { slideIndex = 1 }
+  for (i = 0; i < dot.length; i++){
+    //console.log(dot);
+    dot[i].className = dot[i].className.replace(" active", "");
+    //myslides[i].className = myslides[i].className.replace("my_slides fade-in", "my_slides fade_out");
+}
+  myslides[slideIndex - 1].style.display = "flex";
+  //myslides[slideIndex - 1].className = "my_slides fade-in";
+
+
+  
+  dot[slideIndex - 1].className += " active";
+  myslides[slideIndex - 1].className.replace ("my_slides fade-in", "my_slides fade_out");;
+setTimeout(showSlides, 3500);
+  
+}
+
+showSlides();
+
