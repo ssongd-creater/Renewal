@@ -279,10 +279,11 @@
     .footer-txt h1{display: none;}
   }
 
-    @media screen and (max-width: 350px){
+    @media screen and (max-width: 375px){
       .banner_container, .banner_container .main-slide .slide img{
         height: 160px;
       }
+      .banner_prev, .banner_next{top:-90px;}
       .item-container .item-box ul li h3 {font-size:13px;}
       .item-container p{margin:30px 0;}
       .item-container .item-box .dot-item span{margin:30px 10px;}

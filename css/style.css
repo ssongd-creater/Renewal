@@ -72,6 +72,7 @@
   height: 500px;
   _background: #ccc;
   overflow: hidden;
+  position: relative;
 }
 
 .banner_container .main-slide {
@@ -114,7 +115,7 @@
 .banner_container .main-slide .slide img {
   width: 100%;
   height: 500px;
-  position: relative;
+  position:relative;
   object-fit: cover;
 }
 .banner_container .btns {
@@ -138,6 +139,9 @@
   border-radius: 50%;
   top: -260px;
 }
+
+.banner_prev{padding-right:2px;}
+.banner_next{padding-right:-2px;}
 
 .banner_prev:hover,
 .banner_next:hover {

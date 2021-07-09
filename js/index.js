@@ -41,13 +41,13 @@
           return false
         }else{
           slider(current - 1);
-          console.log(current);
+          //console.log(current);
         };
       }else{
         if(current == slideBox.length-1){
           return false
         }else{
-          slider(current+1);
+          slider(current + 1);
         };
       }
       //slideBoxes.animate({left:-100 + "%"},500);
@@ -138,13 +138,18 @@ if (slideIndex > myslides.length) { slideIndex = 1 }
   myslides[slideIndex - 1].style.display = "flex";
   //myslides[slideIndex - 1].className = "my_slides fade-in";
 
-
-  
   dot[slideIndex - 1].className += " active";
   myslides[slideIndex - 1].className.replace ("my_slides fade-in", "my_slides fade_out");;
-setTimeout(showSlides, 3500);
+  setTimeout(showSlides, 3500);
   
+  dot.addEventListener('click', function () {
+    dot[i].className += " active";
+    console.log(dot[i]);
+  });
 }
 
 showSlides();
+
+
+
 
