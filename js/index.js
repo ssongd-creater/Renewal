@@ -122,6 +122,10 @@ console.log(myslides);
 const dot = document.querySelectorAll(".dot-item .dot");
 
 let slideIndex = 0;
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
 function showSlides() {
   let i;
   for (let i = 0; i < myslides.length; i++){
@@ -139,17 +143,12 @@ if (slideIndex > myslides.length) { slideIndex = 1 }
   //myslides[slideIndex - 1].className = "my_slides fade-in";
 
   dot[slideIndex - 1].className += " active";
-  myslides[slideIndex - 1].className.replace ("my_slides fade-in", "my_slides fade_out");;
+  //myslides[slideIndex - 1].className.replace ("my_slides fade-in", "my_slides fade_out");
   setTimeout(showSlides, 3500);
   
-  dot.addEventListener('click', function () {
-    dot[i].className += " active";
-    console.log(dot[i]);
-  });
 }
 
 showSlides();
 
-
-
+  clearTimeout(showSlides);
 
