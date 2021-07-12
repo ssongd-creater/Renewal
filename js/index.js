@@ -144,11 +144,37 @@ if (slideIndex > myslides.length) { slideIndex = 1 }
 
   dot[slideIndex - 1].className += " active";
   //myslides[slideIndex - 1].className.replace ("my_slides fade-in", "my_slides fade_out");
-  setTimeout(showSlides, 3500);
   
+  // let start = setInterval(showSlides, 3500);
+  // document.querySelector('.dot').addEventListener("mouseover", () => {
+  //   clearInterval(start);
+  // });
+
+  // document.querySelector(".dot").addEventListener("mouseout", () => {
+  //   start = setInterval(showSlides, 3500);
+  // });
+  // clearTimeout(start);
 }
+
+let start;
+
+function startSlide() {
+  start = setInterval(function () {
+    showSlides();
+  }, 3500);
+}
+
+
+document.querySelector(".item-box").addEventListener("mouseenter", () => {
+  clearTimeout(start);
+});
+
+document.querySelector(".item-box").addEventListener("mouseleave", () => {
+  startSlide();
+  //start = setInterval(showSlides, 3500);
+});
 
 showSlides();
 
-  clearTimeout(showSlides);
+  
 
